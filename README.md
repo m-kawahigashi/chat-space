@@ -28,7 +28,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|name|string|null: false, unique: true|
+|name|string|index: true, null: false, unique: true|
 |email|string|null: false, unique: true|
 |created_at|datetime|null: false|
 |update_at|datetime|null: false|
@@ -39,13 +39,14 @@ Things you may want to cover:
 ### Association
 - has_many :groups_users
 - has_many :groups, through: :groups_users
+- has_many :messages
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|name|string|null: false, unique: true|
+|name|string|index: true, null: false, unique: true|
 |created_at|datetime|null: false|
 |update_at|datetime|null: false|
 |user_id|integer|null: false, foreign_key: true|
@@ -54,6 +55,7 @@ Things you may want to cover:
 ### Association
 - has_many :groups_users
 - has_many :users, though: :groups_users
+- has_many :messages
 
 ## groups_usersテーブル
 
