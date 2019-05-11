@@ -28,8 +28,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true, null: false, unique: true|
-|group_user_id|references|null: false, foreign_key: true|
-|group_id|references|null: false, foreign_key: true|
+|group_user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 
 ### Association
@@ -42,8 +42,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true, null: false, unique: true|
-|user_id|references|null: false, foreign_key: true|
-|group_user_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group_user|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :groups_users
@@ -54,8 +54,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|group_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -67,8 +67,8 @@ Things you may want to cover:
 |------|----|-------|
 |body|text|null: false|
 |image|string|null: false|
-|user_id|references|null: false, foreign_key: true|
-|group_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
