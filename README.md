@@ -27,13 +27,9 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
 |name|string|index: true, null: false, unique: true|
-|email|string|null: false, unique: true|
-|created_at|datetime|null: false|
-|update_at|datetime|null: false|
-|group_user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|group_user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 
 ### Association
@@ -45,12 +41,9 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
 |name|string|index: true, null: false, unique: true|
-|created_at|datetime|null: false|
-|update_at|datetime|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_user_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_user_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :groups_users
@@ -61,8 +54,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -74,8 +67,8 @@ Things you may want to cover:
 |------|----|-------|
 |body|text|null: false|
 |image|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
