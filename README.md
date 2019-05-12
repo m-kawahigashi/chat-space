@@ -28,7 +28,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true, null: false, unique: true|
-|group_user|references|null: false, foreign_key: true|
 |group|references|null: false, foreign_key: true|
 
 
@@ -43,7 +42,6 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|index: true, null: false, unique: true|
 |user|references|null: false, foreign_key: true|
-|group_user|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :groups_users
