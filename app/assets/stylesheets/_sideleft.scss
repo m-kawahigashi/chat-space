@@ -1,0 +1,27 @@
+.left-header{
+      &__user-name{
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+      }
+}
+
+.user-menu{
+    margin: 0px;
+    padding: 0px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    display: flex;
+               & li{
+                 margin-left: 0.3rem;
+                   &__edit-user{
+                     display: list-item;
+                     text-align: -webkit-match-parent;
+                     margin-left: 0.3rem;
+                }
+      }
+}
