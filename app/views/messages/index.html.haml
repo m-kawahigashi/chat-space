@@ -15,11 +15,11 @@
               = link_to edit_user_path(current_user) do
                 %i.fa.fa-cog
         .groups
-          = link_to '' do
-            .group
-              %p.group__group-name あ
-              %p.group__latest-message こんにちは
-
+          .group
+            .group__group-name 
+              = group.name
+            .group__latest-message こんにちは
+            
       .side-right
         .right-header
           .current-group

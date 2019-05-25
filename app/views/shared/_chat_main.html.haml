@@ -1,0 +1,25 @@
+.side-right
+  .right-header
+    .current-group
+      %h2.current-group__name あ
+      %ul.member-list
+        Member：
+        %li.member-list__member masa
+    = link_to do
+      .right-header__edit-btn Edit
+        
+  .messages
+    .message
+      .upper-info
+        %p.upper-info__user masa
+        %p.upper-info__date 2019/5/16(Thu) 20:00:00
+      %p.message__text こんにちは
+
+  .form
+    .new-message
+      .input-box
+        %input.input-box__text{placeholder: "メッセージを入力してください。", type: "text"}
+        %label.label-image{for: "message_image"}
+          %i.fa.fa-image
+          %input.label-image__input{type: "file", id: "message_image"}
+    %input.new-message__edit-btn{type: "submit", value: "Send"}
