@@ -9,13 +9,13 @@
           %p.left-header__user-name masa
           %ul.user-menu
             %li.user-menu__edit-user
-              = link_to '' do
+              = link_to new_group_path do
                 %i.fa.fa-edit
             %li.user-menu__new-group
-              = link_to '' do
+              = link_to edit_user_path(current_user) do
                 %i.fa.fa-cog
         .groups
-          = link_to 'group-message' do
+          = link_to '' do
             .group
               %p.group__group-name あ
               %p.group__latest-message こんにちは
