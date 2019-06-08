@@ -23,8 +23,9 @@
     .chat-group-form__field--right
       #chat-group-users
       #chat-group-user-22.chat-group-user.clearfix
-        %input{name: "chat_group[user_ids][]", type: "hidden", value: "22"}
-        %p.chat-group-user__name masa
+        %input{name: "chat_group[user_ids][]", type: "hidden", value: current_user.id}
+        %p.chat-group-user__name 
+          = current_user.name
       #message-search-result
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
