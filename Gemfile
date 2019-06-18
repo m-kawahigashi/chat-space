@@ -58,7 +58,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
- gem 'fog-aws'
+
 
 group :production do
   gem 'unicorn', '5.4.1'
@@ -73,4 +73,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
  gem 'devise'
  gem 'carrierwave'
  gem 'mini_magick'
+ gem 'fog-aws'
 
