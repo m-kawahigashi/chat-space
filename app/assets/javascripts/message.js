@@ -58,9 +58,11 @@ $(document).on('turbolinks:load', function(){
       })
       .done(function(messages){
         messages.forEach(function(message){
+        if (message.id > last_message_id){
         var insertHTML = buildHTML(message);
           $('.messages').append(insertHTML);
           $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'swing');
+          }
         })
       })
       .fail(function(){
@@ -68,5 +70,5 @@ $(document).on('turbolinks:load', function(){
       });
     }
   }
-  //  setInterval(reloadMessages, 5000);
+   setInterval(reloadMessages, 5000);
 });
