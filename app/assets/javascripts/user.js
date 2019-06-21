@@ -37,7 +37,7 @@ $(document).on('turbolinks:load', function(){
       $(this).parent().remove();
     });
 
-  $('#user-search-field').on("keyup", function(){
+  $('.chat-group-form__input').on("keyup", function(){
     var input = $('#user-search-field').val();
 
     $.ajax({
@@ -53,12 +53,9 @@ $(document).on('turbolinks:load', function(){
         appendUser(user);
         });
       }
-      else {
-        appendErrMsgToHTML();
-      };
     })
     .fail(function(){
-      alert('ユーザー検索に失敗しました。');
+      appendErrMsgToHTML();
     })
   })
 })
