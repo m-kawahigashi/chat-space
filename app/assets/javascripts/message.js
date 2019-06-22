@@ -57,9 +57,11 @@ $(document).on('turbolinks:load', function(){
         data: {id: last_message_id},
       })
       .done(function(messages){
+        var insertHTML = '';
+        var last_message_id = $('.message:last').data('message-id');
         messages.forEach(function(message){
         if (message.id > last_message_id){
-        var insertHTML = buildHTML(message);
+         insertHTML += buildHTML(message);
           $('.messages').append(insertHTML);
           $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'swing');
           }

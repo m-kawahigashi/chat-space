@@ -9,6 +9,7 @@ $(document).on('turbolinks:load', function(){
                 <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
               </div>`
   user_search.append(html);
+  return html;
   }
 
   function changeUser(name, id){
@@ -22,28 +23,33 @@ $(document).on('turbolinks:load', function(){
 
   function appendErrMsgToHTML(msg){
     var html = `<div class="chat-group-user clearfix">
-                  <p class="chat-group-user__name">一致するユーザーがいません。</p>
+                  <p class="chat-group-user__name">${msg}</p>
                 </div>`
     user_search.append(html);
   }
 
     $(document).on("click", '.user-search-add', function(){
-      var userName = $(this).data('user-name');
-      var userId = $(this).data('user-id');
+    $('#chat-group-user-22').val();
+      var name = $(this).data('user-name');
+      var id = $(this).data('user-id');
+      changeUser(name, id);
       $(this).parent().remove();
-      changeUser(userName, userId);
     });
     $(document).on("click", '.user-search-remove', function(){
       $(this).parent().remove();
     });
 
-  $('.chat-group-form__input').on("keyup", function(){
+  $('#user-search-field').on("keyup", function(){
     var input = $('#user-search-field').val();
-
+    if (input == ""){
+      $("#user-search-result").empty();
+      appendErrMsgToHTML('一致するユーザーがいません。');
+    }
+    else {
     $.ajax({
       type: 'GET',
       url: '/users',
-      data: {keyword: input},
+      data: { keyword: input },
       dataType: 'json'
     })
     .done(function(users){
@@ -53,9 +59,13 @@ $(document).on('turbolinks:load', function(){
         appendUser(user);
         });
       }
+      else {
+        appendErrMsgToHTML('一致するユーザーがいません。');
+      }
     })
     .fail(function(){
-      appendErrMsgToHTML();
+      appendErrMsgToHTML('一致するユーザーがいません。');
     })
+    }
   })
 })
